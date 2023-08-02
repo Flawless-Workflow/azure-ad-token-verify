@@ -142,6 +142,6 @@ def _get_openid_config(tenant_id: str) -> Dict[str, Any]:
     Returns:
         Dict[str, Any]: The OpenID config
     """
-    oidc_response = requests.get(f"https://login.microsoftonline.com/{tenant_id}/.well-known/openid-configuration")
+    oidc_response = requests.get(f"https://login.microsoftonline.com/{tenant_id}/v2.0/.well-known/openid-configuration")
     oidc_response.raise_for_status()
     return oidc_response.json()
